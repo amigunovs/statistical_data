@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ANDREJS ANALYSIS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F4D03F;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .image-column {
+            flex-basis: 30%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-column:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-column img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .image-column:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-column:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">ANDREJS ANALYSIS</h1>
+
+<div class="image-row">
+    <div class="image-column">
+        <img src="{% static 'analysis/plot_usa.png' %}" alt="Image 1">
+        <div class="image-overlay">
+            <div class="overlay-content">
+                <h3>USA Statistics Data</h3>
+                <p>GDP Vs Labour</p>
+            </div>
+        </div>
+    </div>
+    <div class="image-column">
+        <img src="{% static 'analysis/plot_canada.png' %}" alt="Image 3">
+        <div class="image-overlay">
+            <div class="overlay-content">
+                <h3>CANADA Statistics Data</h3>
+                <p>GDP Vs Labour</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
